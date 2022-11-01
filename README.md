@@ -7,7 +7,7 @@ The goal is to create an simple Python API that exposes an endpoint to obtain pr
 
 The API was created using the Flask micro-framework, and predictions can be obtained via GET or POST HTML requests. GET requests are limited to a single prediction at a time. POST requests accept JSON as input, and both GET and POST respond with another JSON including the variables provided and their associated prediction. Details for the input requirements is outlined later in this guide.
 
-Each python file has an associated log, which describes when and how each of their functions are used. Besides the log, there is some error handling, but more work is needed in that regard. Additionally, a basic home page is included which has information on how to use the API. Documentation of the code was a high priority for this project.
+Each python file has an associated log, which describes when and how each of their functions are used. Besides the log, there is some error handling, but more work is needed in that regard. Additionally, a basic home page is included which has information on how to use the API. Documentation of the code was a high priority for this project. It was assumed that preserving the original code for the model was a priority as well, since that was established as a good performer.
 
 ***
 
