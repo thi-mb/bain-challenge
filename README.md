@@ -1,5 +1,5 @@
 # Bain Challenge: Machine Learning Engineer
-## Predicting Milk Prices in Chile 
+## Predicting Milk Price in Chile 
 
 For this challenge, a [Jupyter notebook with the development of a machine-learning model was provided](https://github.com/SpikeLab-CL/ml-engineer-challenge). This model uses multiple economical and weather variables to predict the price of milk in Chile. 
 
