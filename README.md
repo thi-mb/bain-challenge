@@ -14,7 +14,7 @@ Each python file has an associated log, which describes when and how each of the
 ## Installation with Docker
  1. **Prerequisites**
 
-The only prerequisite is Docker, you can download it for free on [their website](https://www.docker.com).
+The only prerequisite is Docker, it can be downloaded on [their website](https://www.docker.com).
 
  2.  **Building the image**
 
@@ -26,11 +26,11 @@ Build the image with the following command (may take up to 2 minutes):
 
 3. **Running the image as container**
 
-Now that the image is built you can run it as a container, which will create all the dependencies and start the API. To do that, run the following command on terminal:
+Now that the image is built, it can run as a container which will create all the dependencies and start the API. To do that, run the following command on terminal:
 
 `docker run -d -p 8000:5000 --name bain-challenge-test bain-challenge`
 
-Remember that you can monitor the application using the following command:
+Remember that the API can be monitored using the following command:
 
 `docker logs -f bain-challenge-test`
 
