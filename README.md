@@ -46,7 +46,7 @@ This is a simple endpoint to check if the service is operational. If the respons
 
 * **GET request** (`/get_predict/`)
 
-To obtain a prediction using GET requests, all the variables must be included in the url using the following format
+To obtain a prediction using GET requests, all the variables must be included in the url using the following format:
 
 http://localhost:8000/get_request/`?var1=value1&var2=value2&var3=value3` ... so on
 
