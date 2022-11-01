@@ -36,15 +36,15 @@ Remember that you can monitor the application using the following command:
 
 ## Obtaining predictions
 Once the API is running, the address should be [http://localhost:8000/](http://localhost:8000/)
-* **Home page** (`/`)
+* **Home page** (`http://localhost:8000/`)
 
 This contains some basic information on how to use the API. I am not a front-end developer but felt it should be included. It can be accessed via the link above.
 
-* **Health check** (`/health/`)
+* **Health check** (`http://localhost:8000/health/`)
 
 This is a simple endpoint to check if the service is operational. If the response code is 200, that means the system is healthy. It can also be used via a browser and if the system is healthy it will return a message saying 'Sytem is operational!'.
 
-* **GET request** (`/get_predict/`)
+* **GET request** (`http://localhost:8000/get_predict/`)
 
 To obtain a prediction using GET requests, all the variables must be included in the url using the following format:
 
@@ -54,7 +54,7 @@ This kind if request is limited to a single prediction but can be easily used by
 
 If the variables submitted have a formatting error, or if any variables are missing, a JSON with an error message will be returned with details on what problem the pipeline has run into.
 
-* **POST request** (`/post_predict/`)
+* **POST request** (`http://localhost:8000/post_predict/`)
 
 This is the main endpoint for obtaining predictions. To obtain a prediction, submit a JSON using your preferred requests manager. In this guide, python requests (plus json and pandas) will be used.
 
