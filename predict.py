@@ -45,16 +45,14 @@ class LechePredictor:
         make_prediction: the method used to orchestrate prediction. It will call methods for preparing data and then output predictions
     '''
 
-    @classmethod
     @logger
-    def __init__(cls):
+    def __init__(self):
         '''Parameters: None'''
-        cls.model = pickle.load(open('model/leche_predictor.pkl', 'rb')) 
+        self.model = pickle.load(open('model/leche_predictor.pkl', 'rb')) 
     
 
-    @classmethod
     @logger
-    def find_missing_cols(cls, data):
+    def find_missing_cols(self, data):
         '''This function will parse throught the data submitted and find if 
         any columns essential to the model for prediction are missing. An
         error will be raised if missing columns are found.
@@ -69,9 +67,8 @@ class LechePredictor:
                 f'The following columns were missing in the request: \n\n {missing}' 
 
     
-    @classmethod
     @logger
-    def separate_new_data(cls, data):
+    def separate_new_data(self, data):
         '''This function will separate a single dataset into the precipitaciones
         and banco_central sets. This is needed because the established processing
         of these datasets happens separately.
@@ -91,9 +88,8 @@ class LechePredictor:
         return precipitaciones, banco_central
 
 
-    @classmethod
     @logger
-    def prep_new_data(cls, precipitaciones, banco_central):
+    def prep_new_data(self, precipitaciones, banco_central):
         '''This function is used to preprocess all of the data used for prediction, 
         performing the same treatment as when data is prepared to train the model.
         
@@ -134,9 +130,8 @@ class LechePredictor:
         return data
 
 
-    @classmethod
     @logger
-    def find_cols_all_na(cls, data):
+    def find_cols_all_na(self, data):
         '''This function will assert that none of the columns in the processed DataFrame are filled with 
         NaNs. It is a last check before using the data to make a prediction. This is mainly a safeguard 
         because it could happen that after processing, the data for prediction is an empty DataFrame.
@@ -150,9 +145,8 @@ class LechePredictor:
             Make sure sure there aren\'t null values for the following variables: {cols}'''
 
 
-    @classmethod
     @logger
-    def make_prediction(cls, precipitaciones, banco_central):
+    def make_prediction(self, precipitaciones, banco_central):
         '''This is the function used for predicting, it orchestrates all data preparation steps calling 
         previous methods to check and prepare the data, then output predictions. Note: datasets have to
         be split (using separate_new_data method) before using this method.
@@ -166,8 +160,8 @@ class LechePredictor:
             predictions
         '''
         
-        data = cls.prep_new_data(precipitaciones, banco_central)
-        cls.find_cols_all_na(data)      
-        data['prediction'] = cls.model.predict(data)
+        data = self.prep_new_data(precipitaciones, banco_central)
+        self.find_cols_all_na(data)      
+        data['prediction'] = self.model.predict(data)
 
         return data
